@@ -17,7 +17,7 @@ export const finalResponse = z.object({
 export async function generateGPTAnswer(prompt, responseFormat, responseName) {
   try {
     const completion = await openai.beta.chat.completions.parse({
-      model: "gpt-4o-mini",
+      model: 'gpt-4o',
       messages: prompt,
       response_format: zodResponseFormat(responseFormat, responseName),
     });
